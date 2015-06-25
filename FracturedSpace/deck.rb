@@ -17,20 +17,33 @@ colors = ['#19120c'] * 1 +
          ['#1A0A0A'] * 9 +
          ['#230503'] * 10
 cardnb = 18
-width = 815
-height = 1110
-topm = 32
-leftm = 30
-nw = 60
-bbvm = 75
-bbhm = bbvm + 8
+width = 1050
+height = 750
+topm = 0
+leftm = 0
+nw = 0
+bbvm = 0
+bbhm = bbvm + 0
 fontpx = 95
 font = "Drukaatieburti #{fontpx}px"
-imagesdir = '~/PnP/TidesOfTime/Art/'
+imagesdir = '/home/gl/PnP/TidesOfTime/Art/'
+images = (0..17).collect{|i| imagesdir + 'test-' + String(i) + '.png'}
+
 drawlines = false
-puts font
+
 Squib::Deck.new(width: width, height: height, cards: cardnb, layout: 'layout.yml') do
+  background color: '#230602'
+  deck = xlsx file: 'deck.xlsx'
+
+  png file: images
+
+  text str: deck['Title'], layout: :Title
+  text str: deck['Pouvoir'], layout: :PowerText
+
+  puts deck['Suit'].collect{|i| imagesdir + i + '.png'}
+  png file: deck['Suit'].collect{|i| imagesdir + i + '.png'}, layout: :SuitIcon
 
 
   save format: :png
+
 end

@@ -1,0 +1,23 @@
+AllText:
+    font: ChunkFive Roman,Sans 12
+    align: center
+    color: '#F3EFE3'
+
+Title:
+    extends: AllText
+    width: 1000
+    x: 25
+    y: 700
+
+SuitIcon:
+    x: 5
+    y: 5
+    width: 150
+    height: 150
+
+PowerText:
+    extends: AllText
+    y: 25
+    align: right
+    width: 500
+    x: 500
