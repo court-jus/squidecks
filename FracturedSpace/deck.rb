@@ -16,9 +16,9 @@ colors = ['#19120c'] * 1 +
          ['#0B1B18'] * 8 +
          ['#1A0A0A'] * 9 +
          ['#230503'] * 10
-cardnb = 18
-width = 1050
-height = 750
+cardnb = 1
+width = 2100
+height = 1500
 topm = 0
 leftm = 0
 nw = 0
@@ -35,7 +35,7 @@ Squib::Deck.new(width: width, height: height, cards: cardnb, layout: 'layout.yml
   background color: '#230602'
   deck = xlsx file: 'deck.xlsx'
 
-  png file: images
+  png file: images, layout: :Art
 
   text str: deck['Title'], layout: :Title
   text str: deck['Pouvoir'], layout: :PowerText

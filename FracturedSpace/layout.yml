@@ -1,13 +1,13 @@
 AllText:
-    font: ChunkFive Roman,Sans 12
+    font: ChunkFive Roman,Sans 26
     align: center
     color: '#F3EFE3'
 
 Title:
     extends: AllText
-    width: 1000
-    x: 25
-    y: 700
+    width: 2000
+    x: 50
+    y: 1400
 
 SuitIcon:
     x: 5
@@ -17,7 +17,10 @@ SuitIcon:
 
 PowerText:
     extends: AllText
-    y: 25
+    y: 50
     align: right
-    width: 500
-    x: 500
+    width: 1000
+    x: 1000
+
+Art:
+    width: 2100
