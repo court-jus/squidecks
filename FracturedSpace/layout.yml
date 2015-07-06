@@ -1,12 +1,27 @@
 AllText:
     font: ChunkFive Roman,Sans 26
-    align: center
+    align: left
     color: '#F3EFE3'
 
 Title:
     extends: AllText
+    font: Demonized 95px
     width: 2000
-    x: 50
+    x: 100
+    y: 1300
+
+Title2:
+    extends: Title
+    font: Demonized 250px
+    color: '#F3EFE320'
+    x: 150
+    y: 1150
+
+Title3:
+    extends: Title
+    font: Demonized 55px
+    color: '#F3EFE390'
+    x: 400
     y: 1400
 
 SuitIcon:
@@ -17,10 +32,14 @@ SuitIcon:
 
 PowerText:
     extends: AllText
-    y: 50
+    y: 145
     align: right
-    width: 1000
+    width: 750
     x: 1000
 
 Art:
     width: 2100
+    height: 1500
+
+Masque:
+    extends: Art

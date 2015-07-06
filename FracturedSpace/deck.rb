@@ -32,16 +32,17 @@ images = (0..17).collect{|i| imagesdir + 'test-' + String(i) + '.png'}
 drawlines = false
 
 Squib::Deck.new(width: width, height: height, cards: cardnb, layout: 'layout.yml') do
-  background color: '#230602'
+  background color: 'black'
   deck = xlsx file: 'deck.xlsx'
 
   png file: images, layout: :Art
+  png file: imagesdir + 'masque.png', layout: :Masque
 
-  text str: deck['Title'], layout: :Title
-  text str: deck['Pouvoir'], layout: :PowerText
-
-  puts deck['Suit'].collect{|i| imagesdir + i + '.png'}
   png file: deck['Suit'].collect{|i| imagesdir + i + '.png'}, layout: :SuitIcon
+  text str: deck['Title'], layout: :Title
+  text str: deck['Title'], layout: :Title2
+  text str: deck['Title'], layout: :Title3
+  text str: deck['Pouvoir'], layout: :PowerText
 
 
   save format: :png
