@@ -10,6 +10,13 @@ Title:
     x: 100
     y: 1300
 
+TitleShadow:
+    extends: Title
+    color: '#000000'
+    width: 2000
+    x: 105
+    y: 1305
+
 Title2:
     extends: Title
     font: Demonized 250px
@@ -25,10 +32,10 @@ Title3:
     y: 1400
 
 SuitIcon:
-    x: 5
-    y: 5
-    width: 150
-    height: 150
+    x: 0
+    y: 0
+    width: 530
+    height: 370
 
 PowerText:
     extends: AllText

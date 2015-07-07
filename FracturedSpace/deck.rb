@@ -16,7 +16,7 @@ colors = ['#19120c'] * 1 +
          ['#0B1B18'] * 8 +
          ['#1A0A0A'] * 9 +
          ['#230503'] * 10
-cardnb = 1
+cardnb = 18
 width = 2100
 height = 1500
 topm = 0
@@ -36,13 +36,20 @@ Squib::Deck.new(width: width, height: height, cards: cardnb, layout: 'layout.yml
   deck = xlsx file: 'deck.xlsx'
 
   png file: images, layout: :Art
+  png file: deck['Suit'].collect{|i| imagesdir + i + '.png'}, layout: :SuitIcon
   png file: imagesdir + 'masque.png', layout: :Masque
 
-  png file: deck['Suit'].collect{|i| imagesdir + i + '.png'}, layout: :SuitIcon
+  text str: deck['Title'], layout: :TitleShadow
   text str: deck['Title'], layout: :Title
   text str: deck['Title'], layout: :Title2
   text str: deck['Title'], layout: :Title3
-  text str: deck['Pouvoir'], layout: :PowerText
+  text(str: deck['Pouvoir'], layout: :PowerText) do |embed|
+      embed.png key: ':RED:', file: imagesdir + 'RED.png'
+      embed.png key: ':YELLOW:', file: imagesdir + 'YELLOW.png'
+      embed.png key: ':PINK:', file: imagesdir + 'PINK.png'
+      embed.png key: ':BLUE:', file: imagesdir + 'BLUE.png'
+      embed.png key: ':GREEN:', file: imagesdir + 'GREEN.png'
+  end
 
 
   save format: :png
