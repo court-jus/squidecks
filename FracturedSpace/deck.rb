@@ -27,7 +27,7 @@ bbhm = bbvm + 0
 fontpx = 95
 font = "Drukaatieburti #{fontpx}px"
 imagesdir = '/home/gl/PnP/TidesOfTime/Art/'
-images = (0..17).collect{|i| imagesdir + 'test-' + String(i) + '.png'}
+images = (0..17).collect{|i| imagesdir + 'card-' + String(i) + '.png'}
 
 drawlines = false
 
@@ -39,17 +39,34 @@ Squib::Deck.new(width: width, height: height, cards: cardnb, layout: 'layout.yml
   png file: deck['Suit'].collect{|i| imagesdir + i + '.png'}, layout: :SuitIcon
   png file: imagesdir + 'masque.png', layout: :Masque
 
-  text str: deck['Title'], layout: :TitleShadow
-  text str: deck['Title'], layout: :Title
-  text str: deck['Title'], layout: :Title2
-  text str: deck['Title'], layout: :Title3
-  text(str: deck['Pouvoir'], layout: :PowerText) do |embed|
-      embed.png key: ':RED:', file: imagesdir + 'RED.png'
-      embed.png key: ':YELLOW:', file: imagesdir + 'YELLOW.png'
-      embed.png key: ':PINK:', file: imagesdir + 'PINK.png'
-      embed.png key: ':BLUE:', file: imagesdir + 'BLUE.png'
-      embed.png key: ':GREEN:', file: imagesdir + 'GREEN.png'
+  text str: deck['Titre'], layout: :TitleShadow
+  text str: deck['Titre'], layout: :Title
+  text str: deck['Titre'], layout: :Title2
+  text str: deck['Titre'], layout: :Title3
+  text str: deck['Points'], layout: :Points
+  text(str: deck['Pouvoir'], layout: :PowerText2) do |embed|
+      embed.png key: ':RED:', file: imagesdir + 'sRED.png', width: 100, height: 50
+      embed.png key: ':YELLOW:', file: imagesdir + 'sYELLOW.png', width: 100, height: 50
+      embed.png key: ':PINK:', file: imagesdir + 'sPINK.png', width: 100, height: 50
+      embed.png key: ':BLUE:', file: imagesdir + 'sBLUE.png', width: 100, height: 50
+      embed.png key: ':GREEN:', file: imagesdir + 'sGREEN.png', width: 100, height: 50
   end
+  text(str: deck['Pouvoir'], layout: :PowerText3) do |embed|
+      embed.png key: ':RED:', file: imagesdir + 'sRED.png', width: 100, height: 50
+      embed.png key: ':YELLOW:', file: imagesdir + 'sYELLOW.png', width: 100, height: 50
+      embed.png key: ':PINK:', file: imagesdir + 'sPINK.png', width: 100, height: 50
+      embed.png key: ':BLUE:', file: imagesdir + 'sBLUE.png', width: 100, height: 50
+      embed.png key: ':GREEN:', file: imagesdir + 'sGREEN.png', width: 100, height: 50
+  end
+  text(str: deck['Pouvoir'], layout: :PowerText) do |embed|
+      embed.png key: ':RED:', file: imagesdir + 'sRED.png', width: 100, height: 50
+      embed.png key: ':YELLOW:', file: imagesdir + 'sYELLOW.png', width: 100, height: 50
+      embed.png key: ':PINK:', file: imagesdir + 'sPINK.png', width: 100, height: 50
+      embed.png key: ':BLUE:', file: imagesdir + 'sBLUE.png', width: 100, height: 50
+      embed.png key: ':GREEN:', file: imagesdir + 'sGREEN.png', width: 100, height: 50
+  end
+  # rect layout: :Points
+  # rect layout: :PowerText
 
 
   save format: :png
